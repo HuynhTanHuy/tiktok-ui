@@ -1,0 +1,23 @@
+.content {
+    width: 224px;
+    padding-bottom: 8px;
+
+    .menu_item {
+        color: rgb(22, 24, 35);
+        width: 100%;
+        justify-content: flex-start;
+        background-color: transparent;
+        border-radius: 0;
+        font-weight: 540;
+        padding: 11px 16px;
+        margin-left: 0;
+
+        &:hover {
+            background-color: rgba(22, 24, 35, 0.03);
+        }
+    }
+}
+
+.menu-wrapper {
+    padding-bottom: 8px;
+}

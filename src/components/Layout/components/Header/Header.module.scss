@@ -19,9 +19,21 @@
 .logo {
 }
 
+.search-input,
+.search-list {
+    width: 500px;
+}
+
+.search-title {
+    height: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    color: rgba(22, 24, 35, 0.5);
+}
+
 .search-input {
     position: relative;
-    width: 500px;
     height: var(--search-height);
     padding-left: 16px;
     display: flex;
@@ -88,4 +100,11 @@
         background-color: rgba(22, 24, 35, 0.03);
         color: #000;
     }
+}
+
+.more_btn {
+    font-size: 2rem;
+    margin-left: 16px;
+    padding: 0 4px;
+    background-color: transparent;
 }
