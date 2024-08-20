@@ -167,7 +167,7 @@ function Header() {
                     <Menu items={currentUser ? showUser : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
-                                src="https://p16-sign-sssva.tiktokcdn.com/tos-maliva-avt-0068/a430238e0780d4a4e5602166678c5ca4~c5_720x720.jpeg?lk3s=a5d48078&nonce=30100&refresh_token=227ab4a8f26638d7e369f4433e12ae8e&x-expires=1723910400&x-signature=V9wXQDGCWva87ME6J5vUPPFYZBA%3D&shp=a5d48078&shcp=81f88b70"
+                                src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/a430238e0780d4a4e5602166678c5ca4~c5_720x720.jpeg?lk3s=a5d48078&nonce=30100&refresh_token=227ab4a8f26638d7e369f4433e12ae8e&x-expires=1723910400&x-signature=V9wXQDGCWva87ME6J5vUPPFYZBA%3D&shp=a5d48078&shcp=81f88b70"
                                 className={cx('user_avatar')}
                                 alt="User Image"
                                 fallback="https://p9-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/61b3b510c3edf67f30683734199c608e.jpeg?lk3s=a5d48078&nonce=29827&refresh_token=5b305a05a227439aae135b351b3ec51a&x-expires=1724256000&x-signature=NYc2n7fiCZsGWboAeHiAArXqyMo%3D&shp=a5d48078&shcp=81f88b70"
