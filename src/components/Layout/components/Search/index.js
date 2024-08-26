@@ -1,12 +1,14 @@
+import { useEffect, useRef, useState } from 'react';
 import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import * as services from '~/apiServices/services';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { faCircleXmark, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
-import AccountItems from '~/components/AccountItems';
 import { useDebounce } from '~/hooks';
+import AccountItems from '~/components/AccountItems';
 import styles from './Search.module.scss';
-import { useEffect, useRef, useState } from 'react';
 
 const cx = classNames.bind(styles);
 function Search() {
@@ -22,14 +24,16 @@ function Search() {
             setSearchResult([]);
             return;
         }
+        const handle = async () => {
+            setLoading(true);
 
-        setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${debounced}&type=less`)
-            .then((res) => res.json())
-            .then((res) => {
-                setSearchResult(res.data);
-                setLoading(false);
-            });
+            const result = await services.fetchApi(debounced);
+            setSearchResult(result);
+
+            setLoading(false);
+        };
+
+        handle();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [debounced]);
 
