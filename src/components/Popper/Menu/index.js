@@ -7,7 +7,7 @@ import Header from './Header';
 import { useState } from 'react';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     //Lấy phần tử cuối cùng
     const current = history[history.length - 1];
@@ -34,6 +34,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             interactive
             delay={[0, 700]}
             placement="bottom-end"
+            hideOnClick={hideOnClick}
             render={(arr) => (
                 <div className={cx('content')} tabIndex="-1" {...arr}>
                     <PopperWrapper className={cx('menu-wrapper')}>

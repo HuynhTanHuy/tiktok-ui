@@ -5,6 +5,8 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import images from '~/assets/img';
+import routesConfig from '~/config/routes';
+import { Link } from 'react-router-dom';
 import {
     faEllipsisVertical,
     faCircleQuestion,
@@ -107,9 +109,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="Tiktok-logo"></img>
-                </div>
+                </Link>
                 {/*Search*/}
                 <Search />
                 <div className={cx('actions')}>
