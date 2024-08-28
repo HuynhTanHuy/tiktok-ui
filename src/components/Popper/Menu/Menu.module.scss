@@ -22,10 +22,15 @@
     padding-bottom: 8px;
 }
 
+.menu-body {
+    overflow: auto;
+}
+
 .header {
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 
 .btn-back {
