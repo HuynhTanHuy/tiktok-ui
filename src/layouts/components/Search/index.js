@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import * as services from '~/apiServices/services';
+import * as searchservices from '~/services/searchServices';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { faCircleXmark, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useDebounce } from '~/hooks';
@@ -27,7 +27,7 @@ function Search() {
         const handle = async () => {
             setLoading(true);
 
-            const result = await services.fetchApi(debounced);
+            const result = await searchservices.fetchApi(debounced);
             setSearchResult(result);
 
             setLoading(false);
