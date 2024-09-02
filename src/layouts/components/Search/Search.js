@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import HeadlessTippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import * as searchservices from '~/services/searchServices';
+import * as searchServices from '~/services/searchServices';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import { faCircleXmark, faSearch, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { useDebounce } from '~/hooks';
@@ -17,17 +17,17 @@ function Search() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
     const inputRef = useRef();
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
         const handle = async () => {
             setLoading(true);
 
-            const result = await searchservices.fetchApi(debounced);
+            const result = await searchServices.fetchApi(debouncedValue);
             setSearchResult(result);
 
             setLoading(false);
@@ -35,7 +35,7 @@ function Search() {
 
         handle();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleFocus = () => {
         setSearchValue('');
