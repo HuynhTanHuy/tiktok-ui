@@ -16,6 +16,7 @@ import {
     PeopleActive,
     LiveActive,
 } from '~/components/icons';
+import FollowAccounts from './FollowAccounts';
 
 const cx = classNames.bind(styles);
 function Sidebar() {
@@ -51,6 +52,7 @@ function Sidebar() {
                     }
                 />
             </Menu>
+            <FollowAccounts label="Following accounts" />
         </aside>
     );
 }
