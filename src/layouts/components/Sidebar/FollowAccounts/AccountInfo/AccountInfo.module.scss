@@ -1,0 +1,61 @@
+.wrapper {
+    width: 320px;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Image {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.follow-btn {
+    padding: 6px 16px;
+}
+
+.Info {
+    margin-top: 12px;
+}
+
+.nickname {
+    color: #161823;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.check {
+    color: #5cd7fd;
+    margin-left: 4px;
+}
+
+.name {
+    color: #595b62;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.analyst {
+    margin-top: 10px;
+}
+
+.quantity ~ .quantity {
+    margin-left: 20px;
+}
+
+.label {
+    margin-left: 4px;
+    color: #161823bf;
+}
